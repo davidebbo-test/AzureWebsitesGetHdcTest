@@ -7,6 +7,13 @@
 
 	public static class Test
 	{
+		/// <summary>
+		/// Tests rendering of a simple report without an actual data source.
+		/// </summary>
+		/// <remarks>
+		/// The used report definition 'simple.rdl' is a new/blank file created
+		/// with Report Builder 3.0.
+		/// </remarks>
 		public static void TestReportViewer()
 		{
 			Microsoft.Reporting.WebForms.Warning[] warnings;
@@ -20,6 +27,15 @@
 			var report = reportViewer.LocalReport.Render("PDF", null, out mimeType, out encoding, out extension, out streamIds, out warnings);
 		}
 
+		/// <summary>
+		/// Tests creating a sample Excel workbook and adjusting column widths to content.
+		/// </summary>
+		/// <remarks>
+		/// The width is first adjusted to the string 'Hello' in the first cell/column.
+		/// The content is then changed to 'Hello World'. We expect that the width increases
+		/// by about a factor of two. If the width does not increase or is unreasonably large
+		/// an exception reflecting the widths is thrown.
+		/// </remarks>
 		public static void TestClosedXML()
 		{
 			var workbook = new XLWorkbook();
