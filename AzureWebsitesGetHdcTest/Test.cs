@@ -14,7 +14,7 @@
 		/// The used report definition 'simple.rdl' is a new/blank file created
 		/// with Report Builder 3.0.
 		/// </remarks>
-		public static void TestReportViewer()
+		public static byte[] TestReportViewer()
 		{
 			Microsoft.Reporting.WebForms.Warning[] warnings;
 			string[] streamIds;
@@ -24,7 +24,7 @@
 
 			var reportViewer = new ReportViewer();
 			reportViewer.LocalReport.LoadReportDefinition(new StreamReader(typeof(Test).Assembly.GetManifestResourceStream("AzureWebsitesGetHdcTest.simple.rdl")));
-			var report = reportViewer.LocalReport.Render("PDF", null, out mimeType, out encoding, out extension, out streamIds, out warnings);
+			return reportViewer.LocalReport.Render("PDF", null, out mimeType, out encoding, out extension, out streamIds, out warnings);
 		}
 
 		/// <summary>

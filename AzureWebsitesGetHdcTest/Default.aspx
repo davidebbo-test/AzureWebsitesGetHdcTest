@@ -11,6 +11,8 @@
     <div>
       <asp:Button ID="TestClosedXML" runat="server" Text="Test ClosedXML" OnClick="TestClosedXML_Click" />
       <asp:Button ID="TestReportViewer" runat="server" Text="Test ReportViewer" OnClick="TestReportViewer_Click" />
+        <br />
+        <asp:Label ID="Label1" runat="server"></asp:Label>
     </div>
     </form>
 </body>
